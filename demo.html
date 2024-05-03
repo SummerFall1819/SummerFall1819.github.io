@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8"> 
+        <title>基本测试内容</title>
+        <!-- 包含头部信息用于适应不同设备 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 包含 bootstrap 样式表 -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/v4-shims.css">
+
+        <!--https://highlightjs.org/demo-->
+
+        <!-- 引入自定义样式，将会覆盖 bootstrap 中的部分属性-->
+        <link rel="stylesheet" href="./css/custom.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">博客主页</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link active">个人简介</a>
+                        <a href="#" class="nav-item nav-link">随笔</a>
+                    </div>
+                    
+                    <div class="navbar-nav justify-content-end">
+                    <!-- <form>
+                        <div class="input-group">                    
+                            <input type="text" class="form-control" placeholder="Search">
+                            <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+                        </div>
+                    </form> -->
+                    <div class="icon-box"><i id="theme-control" class="fa-regular fa-sun" onclick="SwitchTheme()"></i></div>
+                    <div class="icon-box"><i class="fa-brands fa-weixin top-icons"></i></div>
+                    <div class="icon-box"><a href="https://github.com/SummerFall1819" class="icon-href"><i class="fa-brands fa-github top-icons"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <h1>基于 <code>bootstrap</code> 的基本网页设置</h1>
+
+
+        <div class="row">
+
+            <div id="nav-sidebar" class="d-none d-lg-block">
+                <div id="nav-list"></div>
+                
+
+            </div>
+
+            <div class="col-lg-8 offset-lg-2 col-12 doc-content">
+
+                <p>传统的 markdown 具有易于编辑的特点，PDF 是可保存的，不可更改的，但二者都缺乏交互性能。因此 HTML 可以作为一种补全，同时， markdown 格式也更适合作为博客使用。这个网页主要是用来测试 bootstrap 的一些基本功能，掌握基本语法，自定义函数功能并完成实现。</p>
+
+                <p>标题将作为大纲展示。</p>
+
+                <h3> 标题样式 </h3>
+
+                <p>对 h1, h2, h3, h4 标题进行了相应的设置。对应的折叠框，由于 bootstrap 中的 accordion 显示异常，将手动实现</p>
+
+                <h2>段落设计</h2>
+
+                <p> 段落设计上就使用 p 作为一个段落。 bootstrap 设计了多种段落结构。</p>
+                
+                <p class="lead">这是一个演示引导主体副本用法的实例。</p>
+
+                <p class="text-left">向左对齐文本</p>
+                <p class="text-center">居中对齐文本</p>
+                <p class="text-right">向右对齐文本</p>
+                <p class="text-muted">本行内容是减弱的</p>
+                <p class="text-primary">本行内容带有一个 primary class</p>
+                <p class="text-success">本行内容带有一个 success class</p>
+                <p class="text-info">本行内容带有一个 info class</p>
+                <p class="text-warning">本行内容带有一个 warning class</p>
+                <p class="text-danger">本行内容带有一个 danger class</p>
+
+
+                <h2>文本样式</h2>
+
+                <p> 文本样式包括，<strong>强调</strong>、<em>斜体</em>、<mark>高亮</mark>、文字<sup>上标</sup>、文字<sub>下标</sub>、<del>删除线</del>、<u>下划线</u>等。</p>
+
+                <p>
+                    When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+                    \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+                    $$
+                    \int_a^b f(x) \mathrm dx = F(b) - F(a) \Large|_b^a
+                    $$
+                    $$
+\left\{\begin{aligned} \frac{d x_{i}}{d t} ={}&v_{i}, \quad x_{i}, v_{i} \in \mathbb{R}^{d}, \quad i=1,2, \cdots, N, \quad t>0 \\ 
+\frac{d v_{i}}{d t} ={}&\frac{K_{1}}{N} \sum_{j=1}^{N} \psi\left(\left|x_{j}-x_{i}\right|\right)\left(v_{j}-v_{i}\right) \\ 
+&+\frac{K_{2}}{N} \sum_{j=1}^{N} \frac{r_{i j}-2 R}{2 r_{i j}}\left(x_{j}-x_{i}\right) \end{aligned}\right.
+$$
+                </p>
+
+                <h2>块引用</h2>
+
+                <blockquote class="blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+
+                <p>可能会重新调整 blockquote 的背景颜色等。</p>
+
+                <h2>列表</h2>
+
+                <ol>
+                    <li> 列表1 </li>
+                    <li> 列表2 </li>
+                    <li> 列表3 </li>
+                </ol>
+
+                <ul>
+                    <li> 列表1 </li>
+                    <li> 列表2 </li>
+                    <li> 列表3 </li>
+                </ul>
+
+                <h2>代码及代码块</h2>
+
+                代码通过 pre code 来进行相应实现，引入 highlight.js 库，可以实现代码高亮。
+
+                多代码切换采用了 Tab 组件。
+
+                下面是一个代码块，说明了一个程序语言如何输出 Hello,world.
+
+                    <ul class="nav nav-pills center-block" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">python</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">C</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">C++</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Rust</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+<pre><code class="language-py">
+def Greeting(person):
+    print("Hello, " + person + "!")
+Greeting("World")
+</code></pre>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+<pre><code class="language-c">
+#include <stdio.h>;
+int main() {
+    printf("Hello, world!");
+    return 0;
+}
+</code>
+</pre>
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+<pre><code class="language-c++">
+#include <iostream>;
+using namespace std;
+int main() {
+    cout << "Hello, world!" << endl;
+    return 0;
+}
+</code></pre>
+
+                        </div>
+                        <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">不是我说啊？？？？？？</div>
+                    </div>
+
+                    <br/>
+
+                <h2>链接</h2>
+
+                <!-- <a class="iframe-link" href="https://www.4399.com">
+                点击我显示 iframe
+                <iframe class = "inline-frame" src="https://www.4399.com"></iframe>
+                </a> -->
+
+
+                <h2>图片</h2>                
+
+                <h2>表格</h2>
+
+                <h2>脚注</h2>
+
+                <h2>折叠块</h2>
+
+                <h2>Admonition</h2>
+
+                <h2> 其他 </h2>
+
+                本位置会给出一些带实现的功能的完成。
+
+                <p>我想实现啥？</p>
+
+                <ul>
+                    <li> 实现侧边栏的样式设计。文章大纲会更加好看。</li>
+                    <li> 采用 Tab 方式实现代码块设计</li>
+                    <li> 增加顶端的导航栏，增加夜晚模式 </li>
+                    <li> 考虑一个黑色框，当 hover 时显示内容</li>
+                    <li> 增加键盘输入，点击 上下箭头会切换到下一个 h2 章节</li>
+                    <li> 增加复制按钮，直接复制代码 </li>
+                    <li> 希望做一个 ifream 形式，可以在 hover 时直接显示网页内容。</li>
+                    <li> 折叠 </li>
+                </ul>
+
+                <p class="text-danger">本行内容带有一个 danger class</p>
+
+                <p>
+                    
+                    现代社会以海德格尔的一句“一切实践传统都已经瓦解完了”为嚆矢。滥觞于家庭与社会传统的期望正失去它们的借鉴意义。但面对看似无垠的未来天空，我想循卡尔维诺“树上的男爵”的生活好过过早地振翮。我们怀揣热忱的灵魂天然被赋予对超越性的追求，不屑于古旧坐标的约束，钟情于在别处的芬芳。但当这种期望流于对过去观念不假思索的批判，乃至走向虚无与达达主义时，便值得警惕了。与秩序的落差、错位向来不能为越矩的行为张本。而纵然我们已有翔实的蓝图，仍不能自持已在浪潮之巅立下了自己的沉锚。“我的生活故事始终内嵌在那些我由之获得自身身份共同体的故事之中。”麦金太尔之言可谓切中了肯綮。人的社会性是不可祓除的，而我们欲上青云也无时无刻不在因风借力。社会与家庭暂且被我们把握为一个薄脊的符号客体，一定程度上是因为我们尚缺乏体验与阅历去支撑自己的认知。而这种偏见的傲慢更远在知性的傲慢之上。在孜孜矻矻以求生活意义的道路上，对自己的期望本就是在与家庭与社会对接中塑型的动态过程。而我们的底料便是对不同生活方式、不同角色的觉感与体认。生活在树上的柯希莫为强盗送书，兴修水利，又维系自己的爱情。他的生活观念是厚实的，也是实践的。倘若我们在对过往借韦伯之言“祓魅”后，又对不断膨胀的自我进行“赋魅”，那么在丢失外界预期的同时，未尝也不是丢了自我。毫无疑问，从家庭与社会角度一觇的自我有偏狭过时的成分。但我们所应摒弃的不是对此的批判，而是其批判的廉价，其对批判投诚中的反智倾向。在尼采的观念中，如果在成为狮子与孩子之前，略去了像骆驼一样背负前人遗产的过程，那其“永远重复”洵不能成立。何况当矿工诗人陈年喜顺从编辑的意愿，选择写迎合读者的都市小说，将他十六年的地底生涯降格为桥段素材时，我们没资格斥之以媚俗。蓝图上的落差终归只是理念上的区分，在实践场域的分野也未必明晰。譬如当我们追寻心之所向时，在途中涉足权力的玉墀，这究竟是伴随着期望的泯灭还是期望的达成？在我们塑造生活的同时，生活也在浇铸我们。既不可否认原生的家庭性与社会性，又承认自己的图景有轻狂的失真，不妨让体验走在言语之前。用不被禁锢的头脑去体味切斯瓦夫·米沃什的大海与风帆，并效维特根斯坦之言，对无法言说之事保持沉默。用在树上的生活方式体现个体的超越性，保持婞直却又不拘泥于所谓“遗世独立”的单向度形象。这便是卡尔维诺为我们提供的理想期望范式。生活在树上——始终热爱大地——升上天空。
+
+                    <p class="black-box"> 隐藏内容 </p>
+                
+                </p>
+
+                <p>
+                    <div class="simplemd">
+这里是对 markdown 渲染的一点尝试？
+**加粗**，*斜体*,`code` ==高亮==。
+
+- 第一项
+- 第二项。
+- 第三项。
+
+$$
+\int_b^a f(x)
+$$
+
+```python
+print("hello?")
+
+```
+                    </div>
+                </p>
+
+                <a class="iframe-link" href="https://www.google.com">Link text<iframe src="./test.html"></iframe></a>
+
+            </div>
+
+            <div class="col-lg-2 col"></div>
+
+            
+    </div>
+
+
+    <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+    <!-- 可选: 包含 jQuery 库 -->
+    
+    <!-- 可选: 合并了 Bootstrap JavaScript 插件 -->
+
+    <!--导入顺序请勿更改...-->
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.staticfile.net/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () { $("[data-toggle='tooltip']").tooltip(); });
+    </script>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+        let docs = document.querySelectorAll('.simplemd');
+
+        for (let doc of docs) {
+            doc.innerHTML = marked.parse(doc.innerHTML);
+        }
+
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+    <!--增加数学公式渲染项-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script>
+        hljs.highlightAll();
+        hljs.initLineNumbersOnLoad ({ singleLine:true });
+    </script>
+
+    <script src="./js/custom.js"></script>
+    
+    
+    </body>
+
+</html>

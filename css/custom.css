@@ -1,1 +1,351 @@
-/* your styles go here */
+/*constant set begin*/
+:root,
+[data-bs-theme=light] {
+    --bs-nav-bg: var(--bs-body-bg);
+    --bs-nav-link-color: var(--bs-grey-100);
+    --bs-nav-link-hover-color: var(--bs-gray-400);
+    --bs-nav-link-disabled-color: var(--bs-secondary);
+    --bs-nav-active-color: var(--bs-body-color);
+    --code-color: #24292e;
+    --code-color-bg: #fff;
+    --code-color-bg-addition: #f0fff4;
+    --code-color-bg-deletion: #ffeef0;
+    --code-color-keyword: #d73a49;
+    --code-color-title: #6f42c1;
+    --code-color-attr: #005cc5;
+    --code-color-string: #032f62;
+    --code-color-symbol: #e36209;
+    --code-color-comment: #6a737d;
+    --code-color-quote: #22863a;
+    --code-color-subst: #24292e;
+    --code-color-section: #005cc5;
+    --code-color-bullet: #735c0f;
+    --code-color-emphasis: #24292e;
+    --code-color-strong: #24292e;
+    --code-color-addition: #22863a;
+    --code-color-deletion: #b31d28;
+}
+
+[data-bs-theme=dark] {
+    --bs-nav-bg: var(--bs-body-bg);
+    --bs-nav-link-color: var(--bs-grey-900);
+    --bs-nav-link-hover-color: var(--bs-gray-600);
+    --bs-nav-link-disabled-color: var(--bs-secondary);
+    --bs-nav-active-color: var(--bs-body-color);
+    --code-color: #c9d1d9;
+    --code-color-bg: #0d1117;
+    --code-color-bg-addition: #033a16;
+    --code-color-bg-deletion: #67060c;
+    --code-color-keyword: #ff7b72;
+    --code-color-title: #d2a8ff;
+    --code-color-attr: #79c0ff;
+    --code-color-string: #a5d6ff;
+    --code-color-symbol: #ffa657;
+    --code-color-comment: #8b949e;
+    --code-color-quote: #7ee787;
+    --code-color-subst: #c9d1d9;
+    --code-color-section: #1f6feb;
+    --code-color-bullet: #f2cc60;
+    --code-color-emphasis: #c9d1d9;
+    --code-color-strong: #c9d1d9;
+    --code-color-addition: #aff5b4;
+    --code-color-deletion: #ffdcd7;
+}
+
+/*constant set end*/
+
+/* top-nav bar begin */
+
+.icon-box {
+    height: 100%;
+    padding-left: 0.8rem;
+}
+
+.icon-href{
+    color:inherit;
+}
+
+/*top nav bar ends*/
+
+
+
+
+/* Page design begin*/
+
+/* html
+{
+    transition: 0.1s;
+} */
+body {
+    font-family: 'Times New Roman', '楷体', 'Times', 'serif', 'Arial', 'Helvetica', 'sans-serif';
+    transition: 0.5s;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    word-wrap: break-word;
+}
+
+p {
+    text-indent: 2rem;
+}
+
+/*Page design end*/
+
+/*right side bar begin*/
+#nav-sidebar {
+    position: fixed;
+    overflow-y: scroll;
+    left: calc(5 / 6 * 100%);
+    width: calc(1 / 6 * 100%);
+    height: 100%;
+}
+
+.nav-div {
+    padding-left: 0.5rem;
+    background-color: var(--bs-nav-bg);
+    font-weight: bold;
+    border-left: 0.3rem solid var(--bs-nav-bg);
+    transition: 0.5s;
+}
+
+.nav-div-active {
+    border-left: 0.3rem solid var(--bs-nav-active-color);
+}
+
+.nav-div:hover {
+    background-color: var(--bs-nav-link-hover-color);
+}
+
+
+.nav-level2 {
+    font-size: large;
+}
+
+.nav-level3 {
+    font-size: medium;
+}
+
+.nav-div a {
+    display: block;
+}
+
+/*right side bar begin end*/
+
+
+
+.iframe-link iframe {
+    display: none;
+}
+
+.iframe-link:hover iframe {
+    display: block;
+}
+
+.inline-frame {
+    width: 300px;
+    height: 200px;
+}
+
+.doc-content {
+    border: solid var(--bs-body-color) 1px;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 12rem;
+}
+
+/*code style from the highlight.js*/
+
+.hljs-ln td {
+    padding-right: 1rem !important;
+}
+
+pre {
+    position: relative;
+}
+
+pre:hover .clip {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+}
+
+.clip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    color: #ccc;
+    background-color: hsla(0, 0%, 90.2%, .2);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, .25);
+    opacity: 0;
+    visibility: visible;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 10;
+}
+
+
+.code-icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--bs-body-color);
+    stroke-width: 2px;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    fill: none;
+    color: #2329D6;
+    z-index: 11;
+}
+
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    font-family: 'Fira Code', monospace;
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+.hljs {
+    color: var(--code-color);
+    background: var(--code-color-bg);
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+    color: var(--code-color-keyword)
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+    color: var(--code-color-title)
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-variable {
+    color: var(--code-color-attr)
+}
+
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+    color: var(--code-color-string)
+}
+
+.hljs-built_in,
+.hljs-symbol {
+    color: var(--code-color-symbol)
+}
+
+.hljs-code,
+.hljs-comment,
+.hljs-formula {
+    color: var(--code-color-comment)
+}
+
+.hljs-name,
+.hljs-quote,
+.hljs-selector-pseudo,
+.hljs-selector-tag {
+    color: var(--code-color-quote)
+}
+
+.hljs-subst {
+    color: var(code--color-subst)
+}
+
+.hljs-section {
+    color: var(--code-color-section);
+    font-weight: 700
+}
+
+.hljs-bullet {
+    color: var(--code-color-bullet)
+}
+
+.hljs-emphasis {
+    color: var(--code-color-emphasis);
+    font-style: italic
+}
+
+.hljs-strong {
+    color: var(--code-color-strong);
+    font-weight: 700
+}
+
+.hljs-addition {
+    color: var(--code-color-addition);
+    background-color: var(--code-color-bg-addition)
+}
+
+.hljs-deletion {
+    color: var(--code-color-deletion);
+    background-color: var(--code-color-bg-deletion)
+}
+
+/*code style from the highlight.js ends*/
+
+
+/* Black box begin*/
+.black-box {
+    display: inline;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-color);
+}
+
+.black-box:hover {
+
+    background-color: var(--bs-body-bg);
+    transition: all 0.2s linear;
+}
+
+/*black box end*/
+
+.embed-frame-16by9 {
+    width: 0;
+    height: 0;
+}
+
+.embed-frame {
+    width: 400px;
+    height: 300px;
+
+
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+}
