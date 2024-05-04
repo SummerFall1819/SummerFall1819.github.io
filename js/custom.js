@@ -59,7 +59,6 @@ var ACTIVE_NAV_ID = 0;
 
 // proved useful for single case, could further expand.
 function GenerateNavigation(){
-    console.log('what?');
     var sidelist = document.getElementById('nav-list')
 
     OUTLINES = document.querySelectorAll('h2,h3');
@@ -96,7 +95,7 @@ function GenerateNavigation(){
             node.appendChild(anchor);
             anchor.appendChild(document.createTextNode(outline.innerText));
         }
-        console.log(node);
+        // console.log(node);
         sidelist.appendChild(node);
     }
 
@@ -141,7 +140,11 @@ function FormatCodes()
         var code = codes[i];
         var txt = code.innerHTML;
 
-        txt = txt.replace('<', '&lt;').replace('>', '&gt;');
+        //console.log('>',txt);
+
+        txt = txt.replace(/&amp;/g, "&");
+
+        //console.log(txt);
 
         while(txt.startsWith('\n'))
         {
@@ -271,10 +274,46 @@ function SwitchTheme()
     }
 }
 
+function LoadDocumentContent(href,callback)
+{
+    // console.log(href);
 
-document.addEventListener('DOMContentLoaded', FormatCodes);
-document.addEventListener('DOMContentLoaded', GenerateNavigation);
-document.addEventListener('DOMContentLoaded', AddCopyIcon);
+    if (href == null)
+    {
+        callback();
+        return;
+    }
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', href, true);
+
+    content = document.querySelector('.content-body')
+
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4 && xhr.status == 200)
+        {
+            // console.log(xhr.responseText)
+
+            var text = xhr.responseText;
+
+            //text = text.replace('<', '&lt;').replace('>', '&gt;');
+
+            content.innerHTML = text;
+            //console.log(content.innerHTML)
+            callback();
+            FormatCodes();
+            AddCopyIcon();
+            GenerateNavigation();
+        }
+    }
+    xhr.send();
+}
+
+
+// document.addEventListener('DOMContentLoaded', FormatCodes);
+// document.addEventListener('DOMContentLoaded', GenerateNavigation);
+// document.addEventListener('DOMContentLoaded', AddCopyIcon);
 document.addEventListener('DOMContentLoaded', InitTheme);
 // document.addEventListener('DOMContentLoaded', TestFunc)
 document.addEventListener('scroll', LocateNav);

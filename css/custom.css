@@ -217,6 +217,7 @@ pre code.hljs {
     overflow-x: auto;
     padding: 1em;
     font-family: 'Fira Code', monospace;
+    transition: 0.5s;
 }
 
 code.hljs {

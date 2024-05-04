@@ -63,7 +63,7 @@
 
             <div class="col-lg-8 offset-lg-2 col-12 doc-content">
 
-                <div class="simplemd">
+                <div class="simplemd content-body">
 大家好啊我是说的道理，今天正式的上线了博客，希望可以和大家一起交流学习，共同进步。
 
 博客目前的功能还不够完善，这些都会在之后慢慢的补起来的。
@@ -71,10 +71,29 @@
 原神，启动！
                 </div>
 
+            <a href="./test.html">一个链接</a>
+
             <div class="col-lg-2 col"></div>
 
             
     </div>
+
+    <script src="./js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+
+        function RenderMarkdown()
+        {
+            let docs = document.querySelectorAll('.simplemd');
+            for (let doc of docs) {
+                doc.innerHTML = marked.parse(doc.innerHTML);
+            }
+        }
+        LoadDocumentContent(null, RenderMarkdown)
+
+    </script>
+
     
     <script src="js/bootstrap.bundle.min.js"></script>
 
@@ -86,20 +105,6 @@
         $(function () { $("[data-toggle='tooltip']").tooltip(); });
     </script>
 
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <script>
-        let docs = document.querySelectorAll('.simplemd');
-
-        for (let doc of docs) {
-            doc.innerHTML = marked.parse(doc.innerHTML);
-        }
-
-    </script>
-
-    
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 
@@ -113,9 +118,6 @@
         hljs.highlightAll();
         hljs.initLineNumbersOnLoad ({ singleLine:true });
     </script>
-
-    <script src="./js/custom.js"></script>
-    
     
     </body>
 
