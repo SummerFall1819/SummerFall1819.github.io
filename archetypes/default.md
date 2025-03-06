@@ -6,4 +6,7 @@ categories: []
 tags: []
 series: []
 draft: true
+featured: false
+params:
+  mathjax: true
 ---
