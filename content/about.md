@@ -2,214 +2,74 @@
 title: "关于"
 layout: about
 hidemeta: true
+
+# 左侧栏数据
+profile:
+  photo: "/images/avatar.jpg"
+  name: "李新元"
+  birth: "2003 年 10 月"
+  role: "博士生"
+
+contact:
+  - icon: "📧"
+    text: "summerfall1819@gmail.com"
+    url: "mailto:summerfall1819@gmail.com"
+  - icon: "🔗"
+    text: "GitHub: @SummerFall1819"
+    url: "https://github.com/SummerFall1819"
+  - icon: "💬"
+    text: "Wechat: @sirius_wave"
+
+interests:
+  - "智能体系统"
+  - "计算机使用代理"
+
+skills:
+  - "Python / C / C++"
+  - "深度学习"
+  - "大语言模型"
 ---
 
-<style>
-.resume-container {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.resume-left {
-  flex: 0 0 280px;
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.resume-right {
-  flex: 1;
-  min-width: 0;
-}
-
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-  display: block;
-  object-fit: cover;
-  background: #ddd;
-}
-
-.resume-left h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.resume-left ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.resume-left li {
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.resume-right h2 {
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.resume-right h2:first-child {
-  margin-top: 0;
-}
-
-.experience-item {
-  margin-bottom: 1.5rem;
-}
-
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.5rem;
-}
-
-.experience-title {
-  font-weight: bold;
-  font-size: 1.05rem;
-}
-
-.experience-date {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.experience-org {
-  color: #555;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .resume-container {
-    flex-direction: column;
-  }
-
-  .resume-left {
-    flex: 1;
-  }
-}
-</style>
-
-<div class="resume-container">
-  <div class="resume-left">
-    <!-- 个人照片 -->
-    <img src="/images/profile.jpg" alt="个人照片" class="profile-photo">
-
-    <!-- 基本信息 -->
-    <h3>基本信息</h3>
-    <ul>
-      <li><strong>姓名：</strong>李新元</li>
-      <li><strong>出生：</strong>2003年</li>
-      <li><strong>身份：</strong>博士生</li>
-    </ul>
-
-    <!-- 联系方式 -->
-    <h3>联系方式</h3>
-    <ul>
-      <li>📧 email@example.com</li>
-      <li>🔗 GitHub: @username</li>
-      <li>🐦 Twitter: @username</li>
-    </ul>
-
-    <!-- 研究兴趣 -->
-    <h3>研究兴趣</h3>
-    <ul>
-      <li>Agent 系统</li>
-      <li>[研究方向 2]</li>
-      <li>[研究方向 3]</li>
-    </ul>
-
-    <!-- 技能 -->
-    <h3>技能</h3>
-    <ul>
-      <li>Python / Go / Rust</li>
-      <li>Machine Learning</li>
-      <li>[其他技能]</li>
-    </ul>
-  </div>
-
-  <div class="resume-right">
-    <!-- 教育背景 -->
-    <h2>🎓 教育背景</h2>
-
-    <div class="experience-item">
-      <div class="experience-header">
-        <span class="experience-title">[学位] - [专业]</span>
-        <span class="experience-date">20XX - 至今</span>
-      </div>
-      <div class="experience-org">[大学名称]</div>
-      <p>[简要描述研究方向、导师、主要成果等]</p>
-    </div>
-
-    <div class="experience-item">
-      <div class="experience-header">
-        <span class="experience-title">[学位] - [专业]</span>
-        <span class="experience-date">20XX - 20XX</span>
-      </div>
-      <div class="experience-org">[大学名称]</div>
-      <p>[简要描述]</p>
-    </div>
-
-    <!-- 研究经历 -->
-    <h2>🔬 研究经历</h2>
-
-    <div class="experience-item">
-      <div class="experience-header">
-        <span class="experience-title">[项目名称]</span>
-        <span class="experience-date">20XX - 20XX</span>
-      </div>
-      <div class="experience-org">[机构/实验室]</div>
-      <p>[项目描述、主要工作、成果等]</p>
-    </div>
-
-    <div class="experience-item">
-      <div class="experience-header">
-        <span class="experience-title">[项目名称]</span>
-        <span class="experience-date">20XX - 20XX</span>
-      </div>
-      <div class="experience-org">[机构/实验室]</div>
-      <p>[项目描述]</p>
-    </div>
-
-    <!-- 工作经历 -->
-    <h2>💼 工作经历</h2>
-
-    <div class="experience-item">
-      <div class="experience-header">
-        <span class="experience-title">[职位]</span>
-        <span class="experience-date">20XX - 20XX</span>
-      </div>
-      <div class="experience-org">[公司名称]</div>
-      <p>[工作内容、主要成就等]</p>
-    </div>
-
-    <!-- 发表论文 -->
-    <h2>📝 发表论文</h2>
-
-    <div class="experience-item">
-      <p><strong>[论文标题]</strong><br>
-      [作者列表]<br>
-      <em>[会议/期刊名称]</em>, 20XX</p>
-    </div>
-
-    <!-- 获奖荣誉 -->
-    <h2>🏆 获奖荣誉</h2>
-
-    <div class="experience-item">
-      <ul>
-        <li><strong>[奖项名称]</strong> - [颁发机构], 20XX</li>
-        <li><strong>[奖项名称]</strong> - [颁发机构], 20XX</li>
-      </ul>
-    </div>
-  </div>
+<div style="text-align: right; margin-bottom: 1rem; font-size: 0.9rem;">
+  <strong>中文</strong> | <a href="/about_en/">English</a> | <a href="/about_casual/">非正式版</a>
 </div>
+
+## 🎓 教育背景
+
+**博士 - 人工智能专业** | 2025 - 至今
+**中国人民大学**
+
+**本科 - 人工智能专业** | 2021 - 2025
+**中国人民大学**
+
+
+## 🔬 研究经历
+
+
+**AgentProcessBench** | 2026.02-2026.03
+**RUCBM**
+
+**AgentCPM-GUI** | 2024.10-2025.02
+**OpenBMB**
+
+**ProactiveAgent** | 2023.10 - 2024.06
+**THUNLP**
+
+
+## 💼 工作经历
+
+**实习生** | 2024.12 - 2025.04
+*美团*
+
+调研 LLM For recommendation 的现有情况。
+
+<!-- ## 📝 发表论文
+
+**[论文标题]**
+[作者列表]
+*[会议/期刊名称]*, 20XX
+
+## 🏆 获奖荣誉
+
+- **[奖项名称]** - [颁发机构], 20XX
+- **[奖项名称]** - [颁发机构], 20XX -->

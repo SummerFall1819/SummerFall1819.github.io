@@ -1,0 +1,230 @@
+{{- define "main" }}
+
+<style>
+/* 覆盖主题的 main 容器宽度限制 */
+.main {
+  max-width: 100% !important;
+  padding: var(--gap) 0 !important;
+}
+
+.post-single {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+.post-header {
+  display: none !important;
+}
+
+.post-title {
+  font-size: 2rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.about-container {
+  display: flex !important;
+  gap: 2rem !important;
+  margin-top: 1.5rem !important;
+  max-width: 100% !important;
+  margin-left: 16.666% !important;
+  margin-right: 16.666% !important;
+  width: 66.666% !important;
+  box-sizing: border-box !important;
+}
+
+.about-left {
+  flex: 0 0 25% !important;
+  background: var(--entry) !important;
+  padding: 1.5rem !important;
+  border-radius: 8px !important;
+  height: fit-content !important;
+  position: sticky !important;
+  top: 80px !important;
+  box-sizing: border-box !important;
+}
+
+.about-right {
+  flex: 0 0 75% !important;
+  min-width: 0 !important;
+  font-size: 0.9rem !important;
+  box-sizing: border-box !important;
+}
+
+.profile-photo {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  margin: 0 auto 1rem !important;
+  display: block !important;
+  object-fit: cover !important;
+  background: var(--border) !important;
+}
+
+.about-left h3 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.6rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding-bottom: 0.3rem !important;
+}
+
+.about-left h3:first-of-type {
+  margin-top: 0 !important;
+}
+
+.about-left ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 0.3rem 0 !important;
+}
+
+.about-left li {
+  margin-bottom: 0.4rem !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
+}
+
+.about-right h2 {
+  border-bottom: 2px solid var(--primary) !important;
+  padding-bottom: 0.4rem !important;
+  margin-top: 1.8rem !important;
+  margin-bottom: 0.8rem !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+}
+
+.about-right h2:first-child {
+  margin-top: 0 !important;
+}
+
+.about-right p {
+  margin-bottom: 0.8rem !important;
+  line-height: 1.7 !important;
+  font-size: 0.9rem !important;
+}
+
+.about-right strong {
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+}
+
+.about-right ul {
+  margin-bottom: 0.8rem !important;
+}
+
+.about-right li {
+  margin-bottom: 0.4rem !important;
+  line-height: 1.7 !important;
+  font-size: 0.9rem !important;
+}
+
+.about-right em {
+  font-size: 0.85rem !important;
+}
+
+.about-left a{
+    color: blue !important;
+}
+
+@media (max-width: 1024px) {
+  .post-single {
+    padding: 0 1.5rem !important;
+  }
+
+  .about-container {
+    gap: 2rem !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-single {
+    padding: 0 1rem !important;
+  }
+
+  .about-container {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  .about-left {
+    flex: 1 !important;
+    position: static !important;
+  }
+
+  .about-right {
+    font-size: 0.95rem !important;
+  }
+}
+</style>
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+
+  <div class="about-container">
+    <div class="about-left">
+      <!-- 个人照片 -->
+      {{- with .Params.profile }}
+      {{- if .photo }}
+      <img src="{{ .photo }}" alt="个人照片" class="profile-photo">
+      {{- else }}
+      <div class="profile-photo"></div>
+      {{- end }}
+
+      <!-- 基本信息 -->
+      <h3>基本信息</h3>
+      <ul>
+        {{- if .name }}<li><strong>姓名：</strong>{{ .name }}</li>{{- end }}
+        {{- if .birth }}<li><strong>出生：</strong>{{ .birth }}</li>{{- end }}
+        {{- if .role }}<li><strong>身份：</strong>{{ .role }}</li>{{- end }}
+      </ul>
+      {{- end }}
+
+      <!-- 联系方式 -->
+      {{- with .Params.contact }}
+      <h3>联系方式</h3>
+      <ul>
+        {{- range . }}
+        <li>
+          {{ .icon }}
+          {{- if .url }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .text }}</a>
+          {{- else }}
+          {{ .text }}
+          {{- end }}
+        </li>
+        {{- end }}
+      </ul>
+      {{- end }}
+
+      <!-- 研究兴趣 -->
+      {{- with .Params.interests }}
+      <h3>研究兴趣</h3>
+      <ul>
+        {{- range . }}
+        <li>{{ . }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+
+      <!-- 技能 -->
+      {{- with .Params.skills }}
+      <h3>技能</h3>
+      <ul>
+        {{- range . }}
+        <li>{{ . }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </div>
+
+    <div class="about-right">
+      {{- .Content }}
+    </div>
+  </div>
+</article>
+
+{{- end }}
