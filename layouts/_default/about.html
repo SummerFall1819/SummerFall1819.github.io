@@ -1,4 +1,5 @@
 {{- define "main" }}
+{{ $isEnglish := or (strings.Contains .File.Path "about_en") (strings.Contains .RelPermalink "about_en") }}
 
 <style>
 /* 覆盖主题的 main 容器宽度限制 */
@@ -123,8 +124,86 @@
   font-size: 0.85rem !important;
 }
 
-.about-left a{
-    color: blue !important;
+.about-left a {
+    color: #0066cc !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.about-left a:hover {
+    color: #0052a3 !important;
+    text-decoration: underline !important;
+}
+
+.dark .about-left a {
+    color: #4a9eff !important;
+}
+
+.dark .about-left a:hover {
+    color: #6bb0ff !important;
+    text-decoration: underline !important;
+}
+
+/* Modal 样式 */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.image-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 450px;
+    max-height: 80vh;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #ccc;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.popup-trigger {
+    cursor: pointer;
 }
 
 @media (max-width: 1024px) {
@@ -169,28 +248,30 @@
       <!-- 个人照片 -->
       {{- with .Params.profile }}
       {{- if .photo }}
-      <img src="{{ .photo }}" alt="个人照片" class="profile-photo">
+      <img src="{{ .photo }}" alt="{{ if $isEnglish }}Profile Photo{{ else }}个人照片{{ end }}" class="profile-photo">
       {{- else }}
       <div class="profile-photo"></div>
       {{- end }}
 
       <!-- 基本信息 -->
-      <h3>基本信息</h3>
+      <h3>{{ if $isEnglish }}Basic Information{{ else }}基本信息{{ end }}</h3>
       <ul>
-        {{- if .name }}<li><strong>姓名：</strong>{{ .name }}</li>{{- end }}
-        {{- if .birth }}<li><strong>出生：</strong>{{ .birth }}</li>{{- end }}
-        {{- if .role }}<li><strong>身份：</strong>{{ .role }}</li>{{- end }}
+        {{- if .name }}<li><strong>{{ if $isEnglish }}Name: {{ else }}姓名：{{ end }}</strong>{{ .name }}</li>{{- end }}
+        {{- if .birth }}<li><strong>{{ if $isEnglish }}Birth: {{ else }}出生：{{ end }}</strong>{{ .birth }}</li>{{- end }}
+        {{- if .role }}<li><strong>{{ if $isEnglish }}Role: {{ else }}身份：{{ end }}</strong>{{ .role }}</li>{{- end }}
       </ul>
       {{- end }}
 
       <!-- 联系方式 -->
       {{- with .Params.contact }}
-      <h3>联系方式</h3>
+      <h3>{{ if $isEnglish }}Contact{{ else }}联系方式{{ end }}</h3>
       <ul>
         {{- range . }}
         <li>
           {{ .icon }}
-          {{- if .url }}
+          {{- if .popup_image }}
+          <a href="#" class="popup-trigger" data-image="{{ .popup_image }}" onclick="event.preventDefault(); showImagePopup('{{ .popup_image }}')">{{ .text }}</a>
+          {{- else if .url }}
           <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .text }}</a>
           {{- else }}
           {{ .text }}
@@ -202,7 +283,7 @@
 
       <!-- 研究兴趣 -->
       {{- with .Params.interests }}
-      <h3>研究兴趣</h3>
+      <h3>{{ if $isEnglish }}Research Interests{{ else }}研究兴趣{{ end }}</h3>
       <ul>
         {{- range . }}
         <li>{{ . }}</li>
@@ -212,7 +293,7 @@
 
       <!-- 技能 -->
       {{- with .Params.skills }}
-      <h3>技能</h3>
+      <h3>{{ if $isEnglish }}Skills{{ else }}技能{{ end }}</h3>
       <ul>
         {{- range . }}
         <li>{{ . }}</li>
@@ -226,5 +307,36 @@
     </div>
   </div>
 </article>
+
+<!-- Image Modal -->
+<div id="imageModal" class="image-modal" onclick="closeImagePopup()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="modal-close" onclick="closeImagePopup()">&times;</span>
+    <img id="modalImage" src="" alt="{{ if $isEnglish }}Popup Image{{ else }}弹出图片{{ end }}">
+  </div>
+</div>
+
+<script>
+function showImagePopup(imageSrc) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  modalImg.src = imageSrc;
+  modal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeImagePopup() {
+  const modal = document.getElementById('imageModal');
+  modal.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+// 按 ESC 键关闭 modal
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeImagePopup();
+  }
+});
+</script>
 
 {{- end }}

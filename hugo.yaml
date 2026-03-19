@@ -18,6 +18,7 @@ languages:
     taxonomies:
       tag: 'tags'
       category: 'categories'
+      series: 'series'
 
     # This place is set as as the navigation page.
     menu:

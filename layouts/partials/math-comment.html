@@ -1,0 +1,66 @@
+<style>
+.margin-comment-wrapper {
+  position: relative;
+}
+
+#margin-comment-tooltip {
+  position: fixed;
+  right: 1rem;
+  padding: 0.75rem 1rem;
+  background: #f1f1ef;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #37352f;
+  line-height: 1.6;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#margin-comment-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var MIN_MARGIN = 180; // px — minimum right margin width to show comment
+  var PADDING = 16;     // px — gap from content edge and from viewport edge
+
+  var tooltip = document.createElement('div');
+  tooltip.id = 'margin-comment-tooltip';
+  document.body.appendChild(tooltip);
+
+  function getContentRight() {
+    // Try common content selectors used by PaperMod
+    var sel = '.post-content, article, .entry-content, main';
+    var el = document.querySelector(sel);
+    if (el) return el.getBoundingClientRect().right;
+    return document.body.getBoundingClientRect().right;
+  }
+
+  function availableWidth() {
+    return window.innerWidth - getContentRight() - PADDING * 2;
+  }
+
+  document.querySelectorAll('.margin-comment-wrapper').forEach(function (el) {
+    el.addEventListener('mouseenter', function () {
+      var avail = availableWidth();
+      if (avail < MIN_MARGIN) return; // not enough space, stay hidden
+
+      var rect = el.getBoundingClientRect();
+      tooltip.style.width = Math.min(avail, 260) + 'px';
+      tooltip.style.top = rect.top + 'px';
+      tooltip.textContent = el.dataset.comment;
+      tooltip.classList.add('visible');
+    });
+    el.addEventListener('mouseleave', function () {
+      tooltip.classList.remove('visible');
+    });
+  });
+});
+</script>

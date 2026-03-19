@@ -1,0 +1,10 @@
+{{ if .Get "summary" }}
+{{ else }}
+{{ warnf "missing value for param 'summary': %s" .Position }}
+{{ end }}
+<details {{ if (eq (.Get "openByDefault") true) }} open {{ end }} style="margin: 1em 0; padding: 0.75em 1em; background: var(--code-bg, #f5f5f5); border-left: 4px solid var(--primary, #666); border-radius: 4px;">
+  <summary style="cursor: pointer; font-weight: bold;">{{ .Get "summary" | markdownify }}</summary>
+  <div style="margin-top: 0.5em; padding-top: 0.5em; border-top: 1px solid var(--border, #ddd);">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

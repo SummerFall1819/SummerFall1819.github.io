@@ -19,6 +19,7 @@ contact:
     url: "https://github.com/SummerFall1819"
   - icon: "💬"
     text: "Wechat: @sirius_wave"
+    popup_image: "/images/QRCode_en.jpg"
 
 interests:
   - "Agent Systems"
@@ -31,7 +32,7 @@ skills:
 ---
 
 <div style="text-align: right; margin-bottom: 1rem; font-size: 0.9rem;">
-  <a href="/about/">中文</a> | <strong>English</strong> | <a href="/about_casual/">Casual</a>
+  <a href="/about/">中文</a> | <strong>English</strong> | <a href="/about_casual_en/">Casual</a>
 </div>
 
 ## 🎓 Education

@@ -19,6 +19,7 @@ contact:
     url: "https://github.com/SummerFall1819"
   - icon: "💬"
     text: "Wechat: @sirius_wave"
+    popup_image: "/images/QRCode.jpg"
 
 interests:
   - "智能体系统"
