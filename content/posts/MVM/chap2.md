@@ -121,5 +121,3 @@ SVD 分解有一些性质。
 - $\boldsymbol u_{r + 1}, \dots, \boldsymbol u_M$ 张成 $\boldsymbol A$ 的左零空间。
 - $\sigma_1 = \max_{\lVert \boldsymbol w \rVert_2 = 1} \lVert \boldsymbol {Aw} \rVert_2 = \lVert \boldsymbol A \rVert_2$
 - $\sigma_N = \min_{\lVert \boldsymbol w \rVert_2 = 1} \lVert \boldsymbol {Aw} \rVert_2$
-
-## Weyl’s Theorem.
