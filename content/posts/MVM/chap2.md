@@ -21,7 +21,7 @@ $$
 \boldsymbol {AV} = \boldsymbol {U\Sigma} \implies \boldsymbol A = \boldsymbol {U\Sigma V}^T
 $$
 
-这就是奇异值分解(SVD)的公式。其中：
+这就是奇异值分解(SVD)的公式。
 上述的解读说明，每个方阵的线性变换等价于三个变换的叠加：
 
 - 一次旋转或翻转 $\boldsymbol V^T$
@@ -77,7 +77,7 @@ $$
 从而
 
 $$
-\boldsymbol S = \boldsymbol U_1^T \boldsymbol A \boldsymbol V_1 = \begin{bmatrix} \sigma_1 & \boldsymbol w^T \\ \boldsymbol 0 & \boldsymbol B \end{bmatrix}\\
+\boldsymbol S = \boldsymbol U_1^T \boldsymbol A \boldsymbol V_1 = \begin{bmatrix} \sigma_1 & \boldsymbol w^T \\\\ \boldsymbol 0 & \boldsymbol B \end{bmatrix}\\
 $$
 
 同时，由于 $\boldsymbol U_1, \boldsymbol V_1$ 都是正交矩阵，从而 $\lVert \boldsymbol S \rVert_2 = \sigma_1$
@@ -85,13 +85,19 @@ $$
 根据
 
 $$
-\lVert \boldsymbol S \rVert_2 \left \lVert \begin{bmatrix} \sigma_1 \\ \boldsymbol w \end{bmatrix} \right \rVert_2 \geq \left \lVert \boldsymbol S \begin{bmatrix} \sigma_1 \\ \boldsymbol w \end{bmatrix} \right \rVert_2 \geq \sigma_1^2 + \boldsymbol w^T \boldsymbol w = (\sigma^2 + \boldsymbol w^T \boldsymbol w) \left\lVert \begin{bmatrix} \sigma_1 \\ \boldsymbol w \end{bmatrix} \right\rVert_2
+\lVert \boldsymbol S \rVert_2 \left \lVert
+    \begin{bmatrix}
+    \sigma_1 \\ \boldsymbol w \end{bmatrix} \right \rVert_2 \geq \left \lVert \boldsymbol S \begin{bmatrix} \sigma_1 \\ \boldsymbol w \end{bmatrix} \right \rVert_2 \geq \sigma_1^2 + \boldsymbol w^T \boldsymbol w = (\sigma^2 + \boldsymbol w^T \boldsymbol w) \left\lVert \begin{bmatrix} \sigma_1 \\ \boldsymbol w \end{bmatrix} \right\rVert_2
 $$
 
 这要求  $\boldsymbol w$ 也是零向量。从而
 
 $$
-\boldsymbol S = \boldsymbol U_1^T \boldsymbol A \boldsymbol V_1 = \begin{bmatrix} \sigma_1 & \boldsymbol 0^T  \\ \boldsymbol 0 & \boldsymbol B \end{bmatrix}\\
+\boldsymbol S = \boldsymbol U_1^T \boldsymbol A \boldsymbol V_1 =
+\begin{bmatrix}
+\sigma_1 & \boldsymbol 0^T  \\\\
+\boldsymbol 0 & \boldsymbol B
+\end{bmatrix}
 $$
 
 仅需使用归纳法，就可以完成证明。
@@ -114,7 +120,7 @@ $$
 
 SVD 分解有一些性质。
 
-- 非零奇异值的个数等于矩阵 $\boldsymbol A$ 的秩 r。
+- 非零奇异值的个数等于矩阵 $\boldsymbol A$ 的秩 $r$。
 - $\boldsymbol v_1, \dots, \boldsymbol v_r$ 张成 $\boldsymbol A$ 的行空间。
 - $\boldsymbol v_{r + 1} ,\dots, \boldsymbol v_N$ 张成 $\boldsymbol A$ 的零空间。
 - $\boldsymbol u_1, \dots, \boldsymbol u_r$ 张成 $\boldsymbol A$ 的列空间。

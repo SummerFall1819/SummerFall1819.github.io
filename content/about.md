@@ -64,6 +64,18 @@ skills:
 
 调研 LLM For recommendation 的现有情况。
 
+## 📝 发表论文
+
+<span style="display:inline-block; background:#B31B1B; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px;">preprint</span> AgentProcessBench
+
+<span style="display:inline-block; background:#E60012; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px;">EMNLP 2025</span>
+
+<span style="display:inline-block; background:#58C9ED; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px;">ICLR 2024</span>
+
+<span style="display:inline-block; background:#68448B; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px;">NeurIPS 2023</span>
+
+
+
 <!-- ## 📝 发表论文
 
 **[论文标题]**
@@ -71,6 +83,11 @@ skills:
 *[会议/期刊名称]*, 20XX
 
 ## 🏆 获奖荣誉
+
+
+e60012 EMNLP
+b31b1b arxiv preprint
+68448b NeurIPS
 
 - **[奖项名称]** - [颁发机构], 20XX
 - **[奖项名称]** - [颁发机构], 20XX -->
