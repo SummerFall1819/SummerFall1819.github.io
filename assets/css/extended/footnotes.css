@@ -1,0 +1,41 @@
+.post-content sup a.footnote-ref {
+    color: var(--secondary);
+    font-size: 0.72em;
+    font-weight: 500;
+    line-height: 0;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.post-content sup a.footnote-ref::before {
+    content: "[";
+}
+
+.post-content sup a.footnote-ref::after {
+    content: "]";
+}
+
+.post-content sup a.footnote-ref:hover {
+    color: var(--secondary);
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.post-content .footnotes {
+    color: var(--secondary);
+    font-size: 0.94rem;
+}
+
+.post-content .footnotes hr {
+    margin: 24px 0 16px;
+}
+
+.post-content .footnotes :is(ol, ul) {
+    margin-top: 10px;
+}
+
+.post-content .footnote-backref {
+    color: var(--secondary);
+    text-decoration: none;
+    box-shadow: none;
+}

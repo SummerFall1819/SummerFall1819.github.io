@@ -1,0 +1,40 @@
+{{- $rawType := .Get "type" | default "info" -}}
+{{- $type := lower (printf "%v" $rawType) -}}
+{{- $aliases := dict
+  "note" "info"
+  "info" "info"
+  "tip" "tip"
+  "tips" "tip"
+  "success" "tip"
+  "warning" "warning"
+  "warn" "warning"
+  "caution" "warning"
+  "error" "error"
+  "danger" "error"
+-}}
+{{- $variant := or (index $aliases $type) "info" -}}
+{{- $titles := dict
+  "info" "Info"
+  "tip" "Tip"
+  "warning" "Warning"
+  "error" "Error"
+-}}
+{{- $icons := dict
+  "info" "&#9432;"
+  "tip" "&#10003;"
+  "warning" "&#9888;"
+  "error" "&#10005;"
+-}}
+{{- $title := .Get "title" | default (index $titles $variant) -}}
+{{- $icon := .Get "icon" | default (index $icons $variant) -}}
+{{- $extraClass := .Get "class" | default "" -}}
+
+<aside class="callout callout-{{ $variant }}{{ with $extraClass }} {{ . }}{{ end }}" data-callout="{{ $variant }}">
+  <div class="callout-header">
+    <span class="callout-icon" aria-hidden="true">{{ $icon | safeHTML }}</span>
+    <span class="callout-title">{{ $title }}</span>
+  </div>
+  <div class="callout-body">
+    {{- .Page.RenderString (dict "display" "block") .Inner -}}
+  </div>
+</aside>

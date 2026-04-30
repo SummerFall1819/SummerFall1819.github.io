@@ -1,0 +1,104 @@
+.post-content .callout {
+    --callout-accent: var(--primary);
+    --callout-border: var(--border);
+    --callout-bg: var(--code-bg);
+    margin: 1.25rem 0;
+    border: 1px solid var(--callout-border);
+    border-inline-start: 4px solid var(--callout-accent);
+    border-radius: var(--radius);
+    background: var(--callout-bg);
+    overflow: hidden;
+}
+
+.post-content .callout-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px 0;
+}
+
+.post-content .callout-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 999px;
+    background: var(--callout-accent);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.post-content .callout-title {
+    color: var(--callout-accent);
+    font-size: 0.96rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.post-content .callout-body {
+    padding: 8px 14px 14px;
+}
+
+.post-content .callout-body > :first-child {
+    margin-top: 0;
+}
+
+.post-content .callout-body > :last-child {
+    margin-bottom: 0;
+}
+
+.post-content .callout-body :is(p, ul, ol, dl, figure, table, pre, blockquote) {
+    margin-bottom: 14px;
+}
+
+.post-content .callout-info {
+    --callout-accent: #1763aa;
+    --callout-border: rgba(23, 99, 170, 0.26);
+    --callout-bg: #f4f8fd;
+}
+
+.post-content .callout-tip {
+    --callout-accent: #1f7a4d;
+    --callout-border: rgba(31, 122, 77, 0.26);
+    --callout-bg: #f2fbf6;
+}
+
+.post-content .callout-warning {
+    --callout-accent: #a35a12;
+    --callout-border: rgba(163, 90, 18, 0.28);
+    --callout-bg: #fff8ef;
+}
+
+.post-content .callout-error {
+    --callout-accent: #b43a38;
+    --callout-border: rgba(180, 58, 56, 0.28);
+    --callout-bg: #fff5f4;
+}
+
+.dark .post-content .callout-info {
+    --callout-accent: #8dc5ff;
+    --callout-border: rgba(141, 197, 255, 0.32);
+    --callout-bg: rgba(19, 45, 70, 0.58);
+}
+
+.dark .post-content .callout-tip {
+    --callout-accent: #8dd7a9;
+    --callout-border: rgba(141, 215, 169, 0.32);
+    --callout-bg: rgba(22, 57, 40, 0.58);
+}
+
+.dark .post-content .callout-warning {
+    --callout-accent: #f3c07a;
+    --callout-border: rgba(243, 192, 122, 0.32);
+    --callout-bg: rgba(74, 47, 19, 0.58);
+}
+
+.dark .post-content .callout-error {
+    --callout-accent: #f19a98;
+    --callout-border: rgba(241, 154, 152, 0.32);
+    --callout-bg: rgba(74, 24, 27, 0.58);
+}

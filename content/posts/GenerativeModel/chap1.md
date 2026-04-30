@@ -1,11 +1,11 @@
 ---
 title: "前言"
 date: 2026-04-08T15:17:50+08:00
-weight: 0
+weight: 2
 categories: [生成式模型, 机器学习]
 tags: []
 series: [生成式模型]
-draft: true
+draft: false
 featured: false
 params:
   mathjax: true
