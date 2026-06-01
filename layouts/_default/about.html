@@ -1,5 +1,7 @@
 {{- define "main" }}
 {{ $isEnglish := or (strings.Contains .File.Path "about_en") (strings.Contains .RelPermalink "about_en") }}
+{{ $formality := site.Params.formality | default false }}
+{{ $formalName := cond $isEnglish "Shenzhi Yang" "杨深智" }}
 
 <style>
 /* 覆盖主题的 main 容器宽度限制 */
@@ -122,6 +124,30 @@
 
 .about-right em {
   font-size: 0.85rem !important;
+}
+
+.publication-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  margin: 0.8rem 0 !important;
+}
+
+.publication-venue {
+  display: inline-block !important;
+  flex: 0 0 9.5rem !important;
+  box-sizing: border-box !important;
+  color: #fff !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  padding: 0.2em 0.7em !important;
+  border-radius: 4px !important;
+  letter-spacing: 0.5px !important;
+  text-align: center !important;
+}
+
+.publication-title {
+  min-width: 0 !important;
 }
 
 .about-left a {
@@ -256,7 +282,11 @@
       <!-- 基本信息 -->
       <h3>{{ if $isEnglish }}Basic Information{{ else }}基本信息{{ end }}</h3>
       <ul>
-        {{- if .name }}<li><strong>{{ if $isEnglish }}Name: {{ else }}姓名：{{ end }}</strong>{{ .name }}</li>{{- end }}
+        {{- if .name }}
+        {{- $profileName := .name }}
+        {{- if $formality }}{{ $profileName = $formalName }}{{- end }}
+        <li><strong>{{ if $isEnglish }}Name: {{ else }}姓名：{{ end }}</strong>{{ $profileName }}</li>
+        {{- end }}
         {{- if .birth }}<li><strong>{{ if $isEnglish }}Birth: {{ else }}出生：{{ end }}</strong>{{ .birth }}</li>{{- end }}
         {{- if .role }}<li><strong>{{ if $isEnglish }}Role: {{ else }}身份：{{ end }}</strong>{{ .role }}</li>{{- end }}
       </ul>
@@ -303,7 +333,28 @@
     </div>
 
     <div class="about-right">
-      {{- .Content }}
+      <div style="text-align: right; margin-bottom: 1rem; font-size: 0.9rem;">
+        {{- if $isEnglish -}}
+          <a href="/about/">中文</a> | <strong>English</strong>{{ if not $formality }} | <a href="/about_casual_en/">Casual</a>{{ end }}
+        {{- else -}}
+          <strong>中文</strong> | <a href="/about_en/">English</a>{{ if not $formality }} | <a href="/about_casual/">非正式版</a>{{ end }}
+        {{- end -}}
+      </div>
+      {{- $content := .Content }}
+      {{- if $formality }}
+        {{- $content = replace $content "李新元" $formalName }}
+        {{- $content = replace $content "Yancy Lee" $formalName }}
+      {{- end }}
+      {{- $content | safeHTML }}
+      {{- with .Params.publications }}
+      <h2>{{ if $isEnglish }}📝 Publications{{ else }}📝 发表论文{{ end }}</h2>
+        {{- range . }}
+        <div class="publication-item">
+          <span class="publication-venue" style="background:{{ .color }};">{{ .venue }}</span>
+          <span class="publication-title">{{ .title }}</span>
+        </div>
+        {{- end }}
+      {{- end }}
     </div>
   </div>
 </article>

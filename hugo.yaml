@@ -23,12 +23,12 @@ languages:
     # This place is set as as the navigation page.
     menu:
       main:
-        - name: 博客
-          pageRef: /
-          weight: 4
         - name: 关于
           url: about/
-          weight: 5
+          weight: 1
+        - name: 博客
+          url: posts/
+          weight: 4
         - name: 系列文章
           pageRef: series/
           weight: 10
@@ -62,6 +62,7 @@ markup:
       unsafe: true
 
 params:
+  formality: false
   ShowPostNavLinks: true
   # profileMode:
   #   enabled: true

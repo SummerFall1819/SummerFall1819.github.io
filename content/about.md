@@ -29,11 +29,21 @@ skills:
   - "Python / C / C++"
   - "深度学习"
   - "大语言模型"
----
 
-<div style="text-align: right; margin-bottom: 1rem; font-size: 0.9rem;">
-  <strong>中文</strong> | <a href="/about_en/">English</a> | <a href="/about_casual/">非正式版</a>
-</div>
+publications:
+  - venue: "preprint"
+    color: "#B31B1B"
+    title: "AgentProcessBench: Diagnosing Step-Level Process Quality in Tool-Using Agents"
+  - venue: "EMNLP 2025"
+    color: "#E60012"
+    title: "AgentCPM-GUI: Building Mobile-Use Agents with Reinforcement Fine-Tuning"
+  - venue: "ICLR 2024"
+    color: "#58C9ED"
+    title: "Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance"
+  - venue: "NeurIPS 2023"
+    color: "#68448B"
+    title: "Enhancing In-Context Learning Performance with Just SVD-Based Weight Pruning: A Theoretical Perspective"
+---
 
 ## 🎓 教育背景
 
@@ -60,30 +70,6 @@ skills:
 **THUNLP**
 
 围绕主动式智能体（proactive agent）展开研究，探索 LLM agent 如何从等待用户指令的被动响应模式，转向能够根据上下文预判需求并主动提供帮助的交互模式。该工作通过真实用户活动构造主动任务预测数据，并引入人类偏好标注和奖励模型来评估智能体主动辅助的合理性。
-
-
-## 📝 发表论文
-
-<div style="display:flex; align-items:flex-start; gap:0.75rem; margin:0.8rem 0;">
-  <span style="display:inline-block; flex:0 0 9.5rem; box-sizing:border-box; background:#B31B1B; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px; text-align:center;">preprint</span>
-  <span>AgentProcessBench: Diagnosing Step-Level Process Quality in Tool-Using Agents</span>
-</div>
-
-<div style="display:flex; align-items:flex-start; gap:0.75rem; margin:0.8rem 0;">
-  <span style="display:inline-block; flex:0 0 9.5rem; box-sizing:border-box; background:#E60012; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px; text-align:center;">EMNLP 2025</span>
-  <span>AgentCPM-GUI: Building Mobile-Use Agents with Reinforcement Fine-Tuning</span>
-</div>
-
-<div style="display:flex; align-items:flex-start; gap:0.75rem; margin:0.8rem 0;">
-  <span style="display:inline-block; flex:0 0 9.5rem; box-sizing:border-box; background:#58C9ED; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px; text-align:center;">ICLR 2024</span>
-  <span>Proactive Agent: Shifting LLM Agents from Reactive Responses to Active Assistance</span>
-</div>
-
-<div style="display:flex; align-items:flex-start; gap:0.75rem; margin:0.8rem 0;">
-  <span style="display:inline-block; flex:0 0 9.5rem; box-sizing:border-box; background:#68448B; color:#fff; font-size:0.85rem; font-weight:700; padding:0.2em 0.7em; border-radius:4px; letter-spacing:0.5px; text-align:center;">NeurIPS 2023</span>
-  <span>Enhancing In-Context Learning Performance with Just SVD-Based Weight Pruning: A Theoretical Perspective</span>
-</div>
-
 
 
 <!-- ## 📝 发表论文

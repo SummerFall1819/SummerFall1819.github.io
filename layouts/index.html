@@ -1,0 +1,9 @@
+{{- define "main" -}}
+{{- $target := "about/" | relLangURL -}}
+<script>
+  window.location.replace("{{ $target }}");
+</script>
+<noscript>
+  <p><a href="{{ $target }}">进入关于页面</a></p>
+</noscript>
+{{- end -}}
