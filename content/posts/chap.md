@@ -1,25 +1,25 @@
 ---
-title: "Chap"
+title: "前言"
 date: 2025-03-03T14:57:49+08:00
-weight: 0
+weight: 1
 categories: []
 tags: []
 series: []
 params:
   mathjax: true
 draft: true
+featured: false
 ---
 
-行内数学公式：$a^2 + b^2 = c^2$。
+阅读说明：
+这里包含一系列学习笔记以及其他杂物。
 
-块公式，
+目前这里主要作为不同系列的入口页使用。
 
-$$
-a^2 + b^2 = c^2
-$$
+- [生成式模型]({{< relref "/posts/GenerativeModel/chap1.md" >}})：从前言开始进入生成式模型系列。
+- [现代数值方法]({{< relref "/posts/MVM/chap1.md" >}})：进入现代数值方法系列。
 
-<div>
-$$
-\boldsymbol{x}_{i+1}+\boldsymbol{x}_{i+2}=\boldsymbol{x}_{i+3}
-$$
-</div>
+
+LeCun later pushed this idea further in world models.[^lecun-world]
+
+[^lecun-world]: Yann LeCun, *A Path Towards Autonomous Machine Intelligence*, 2022.

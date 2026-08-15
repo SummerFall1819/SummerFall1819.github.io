@@ -62,7 +62,7 @@ markup:
       unsafe: true
 
 params:
-  formality: false
+  formality: true # 严肃模式
   ShowPostNavLinks: true
   # profileMode:
   #   enabled: true
